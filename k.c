@@ -2,6 +2,8 @@
 #include <unistd.h>
 
 __attribute__((constructor)) void init() {
+    unsetenv("LD_PRELOAD");
+
     setuid(0);
     setgid(0);
 
